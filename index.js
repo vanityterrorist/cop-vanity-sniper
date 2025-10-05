@@ -17,7 +17,7 @@ fs.promises.readFile("mfatoken.txt", "utf-8")
 
 fs.watchFile("mfatoken.txt", { interval: 250 }, async () => {
   try {
-    const c = await fs.promises.readFile("mfatoken.txt", "utf-8");
+    const c = await fs.promises.readFile("mfa.txt", "utf-8");
     mfaToken = (JSON.parse(c).token || c).trim();
   } catch { }
 });
